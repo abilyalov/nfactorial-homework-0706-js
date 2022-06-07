@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dsd</title>
+    </head>
+    <body>
+        
+    <script>
+        "use strict";
+
+        let manchesterUnited; 
+        const BUDGET = 1;
+        let typeBoolean = true;
+        let team = {
+            gk: 'DeGea',
+            lb: 'Evra', 
+            cb: 'Varane',
+            rb: 'Neville',
+            cdm: 'Keane',
+            cm: 'Schouls',
+            cam: 'Bruno!',
+            lw: 'Ronaldo',
+            st: 'Rooney',
+            "rw rw": 'Sancho',
+            fc: function teamfunc(){
+                return BUDGET+typeBoolean;
+            }
+        }
+        console.log(team.fc()); //2
+        let scores = {
+            first: team.lw,
+            second: team.st,
+        }
+        let midlefields = (team) => {
+            for (let key in team) {
+                if (team[key] == 'cm' || team[key] == 'cdm' || team[key] == 'cam') {
+                    return team[key];
+                }
+            }
+
+        }
+        console.log (Object.keys(team)); // ["gk", "lb", .. , "rw rf"]
+        // filter
+        
+        let topScorer = null;
+
+
+        console.log (scores.first); //Ronaldo
+
+        team.gk2 = 'VanDerSar';
+        console.log (team["rw rw"]); // Sancho
+        console.log (team.gk2); // VanDerSar
+        delete team.gk2; // -VanDerSar
+
+
+        let loosersTeam = ['Ederson', 'Walker', 'Rodrigo', 'Aguero'];
+        console.log (loosersTeam [0]);
+        loosersTeam.pop(); 
+        loosersTeam.push ('Pogba'); 
+        console.log (loosersTeam); 
+        loosersTeam.unshift('Allison');
+        console.log (loosersTeam);
+        loosersTeam.shift();
+        console.log (loosersTeam);
+
+        let badAssTeam = ['Navas', 'Ramos', 'Modric', 'Casemiro', 'WwnAmyBenzema'];
+
+        let soSoTeam = loosersTeam.concat(badAssTeam);
+        console.log(soSoTeam);
+        console.log(soSoTeam.length);
+
+        let filterCasemiro = badAssTeam.filter((badAssPlayer) => badAssPlayer === 'Casemiro');
+        console.log(filterCasemiro);
+
+        let secondTeam = [{
+            name: 'DeGea',
+            position: 'GK'            
+        },
+        {
+            name: 'Ferdinand',
+            position: 'CB'
+        },
+        {
+            name: 'Rooney',
+            position: 'CF'
+        }
+        ];
+
+        let secondTeamNames = secondTeam.map(player => { return player.name});
+        console.log (secondTeamNames);
+
+        let { name, position, ...andOther } = {
+        name: "Ronaldo",
+        position: "LW",
+        team: "GGMU",
+        Goals: ">1000",
+        };
+
+        console.log (andOther);
+
+        const secondPlayerInTheWorld = ['Leonid', 'Messi'];
+        const infoSecondPlayerInTheWorld = ['Salam aley kuuuuuum', ...secondPlayerInTheWorld, '!'];
+        console.log (infoSecondPlayerInTheWorld);
+
+        const myName = "Anuar Bil";
+        console.log([...myName]);
+
+        const numbers = [10, 20, 30, 40, 50];
+        function multiplyNumbers (a, b, c, d, e) {
+            return a+b+c+d+e;
+        }
+        console.log(multiplyNumbers(...numbers));
+
+        console.log(badAssTeam.slice(0,3));
+        console.log(badAssTeam.slice(-2));
+
+        let a = true;
+
+        let b = a ?? false;
+        
+        console.log (b);
+        a = 0;
+        b = a ? true : false; 
+        console.log (b);    
+
+        if (numbers[0] === '10') {
+            console.log(true);
+        } else {
+            console.log (false);
+        }
+
+        let x = prompt('Введите число от 1 до 3:');
+
+        switch(Number(x)) {
+            case 1: 
+                alert('first case');
+                break;
+            case 2: 
+            case 3: 
+                alert('second or third case');
+                break;
+        }
+        
+        while (x) {
+            console.log(x);
+            x--;
+        }
+
+        let i = 0;
+        do { console.log( i );
+        i++;
+        } while (i < 5);        
+
+        for (let j = 0; j < 3; j++) {
+            console.log(j);
+        }
+        // export let hello = function () {
+        //     console.log (`Hello, ${myName}`);
+        // }
+        // hello();
+
+        let salam = () => {
+            console.log (`Salam, ${myName}`);
+        }
+        salam();
+
+
+    </script>
+    </body>
+</html>
